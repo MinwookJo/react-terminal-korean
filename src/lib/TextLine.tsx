@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client'
-import {  useEffect, useMemo, useState } from 'react';
+// 'use client'
+import React, {  useEffect, useMemo, useState } from 'react';
 import { compose, decompose } from './korean';
 import useInterval from './useInterval';
-import eventBus from './eventBus';
+// import eventBus from './eventBus';
 
 interface TextLineProps {
     value: string
@@ -12,7 +12,7 @@ interface TextLineProps {
     className?: string
 }
 
-export default function TextLine({value, speed = 10, id, className=""}: TextLineProps) {
+export default function TextLine({value, speed = 10, _id, className=""}: TextLineProps) {
   const [stringQueue, setStringQueue] = useState<string[]>([]); // 아직 렌더링 안된 한글들
   const [characterQueue, setCharacterQueue] = useState<string[]>([]); // 렌더링 중인 한글
   
@@ -57,7 +57,7 @@ export default function TextLine({value, speed = 10, id, className=""}: TextLine
         const newCharacter = popCharacter()
         if(newCharacter.length === 0) {
           
-          eventBus.emit(`DONE_${id}`)
+          // eventBus.emit(`DONE_${id}`)
           setCharacterQueue([])
         } else {
           setCharacterQueue(newCharacter);
