@@ -1,9 +1,10 @@
 import React from 'react';
 import TextLine from './lib/TextLine';
+import './global.css'
 const App = () => {
   return (
     <div>
-        <TextLine value='ㅋㅋㅋㅋ 갉핡 ㅋㅋㅋㅋㅋ' speed={500}/>
+        <TextLine className='a' value='봙봴밹' speed={800}/>
     </div>
   );
 }
